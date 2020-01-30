@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/Container2OYY74Y/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerVIje1Ft/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'App\Kernel';
@@ -18,9 +18,11 @@ $classes[] = 'Symfony\Component\HttpKernel\EventListener\ValidateRequestListener
 $classes[] = 'Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerNameSubscriber';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\ErrorListener';
-$classes[] = 'Symfony\Component\EventDispatcher\EventDispatcher';
+$classes[] = 'Symfony\Component\DependencyInjection\ParameterBag\ContainerBag';
 $classes[] = 'Symfony\Component\HttpKernel\HttpKernel';
+$classes[] = 'Symfony\Component\HttpKernel\Controller\TraceableControllerResolver';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver';
+$classes[] = 'Symfony\Component\HttpKernel\Controller\TraceableArgumentResolver';
 $classes[] = 'Symfony\Component\HttpKernel\Controller\ArgumentResolver';
 $classes[] = 'Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory';
 $classes[] = 'Symfony\Component\HttpFoundation\RequestStack';
@@ -28,11 +30,13 @@ $classes[] = 'Symfony\Component\HttpKernel\EventListener\SessionListener';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\DebugHandlersListener';
 $classes[] = 'Symfony\Component\HttpKernel\Debug\FileLinkFormatter';
+$classes[] = 'Symfony\Component\Stopwatch\Stopwatch';
 $classes[] = 'Symfony\Component\Routing\RequestContext';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\RouterListener';
 $classes[] = 'Symfony\Component\HttpKernel\Log\Logger';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Routing\Router';
-$classes[] = 'Symfony\Component\DependencyInjection\ParameterBag\ContainerBag';
 $classes[] = 'Symfony\Component\Config\ResourceCheckerConfigCacheFactory';
+$classes[] = 'Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher';
+$classes[] = 'Symfony\Component\EventDispatcher\EventDispatcher';
 
 Preloader::preload($classes);
