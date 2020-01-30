@@ -21,6 +21,10 @@ class ComposerStaticInit44a327fd70931d80e4f5df1ab5d6999d
         array (
             'Webimpress\\SafeWriter\\' => 22,
         ),
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php73\\' => 23,
@@ -102,6 +106,10 @@ class ComposerStaticInit44a327fd70931d80e4f5df1ab5d6999d
         'Webimpress\\SafeWriter\\' => 
         array (
             0 => __DIR__ . '/..' . '/webimpress/safe-writer/src',
+        ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
         'Symfony\\Polyfill\\Php73\\' => 
         array (
@@ -348,6 +356,16 @@ class ComposerStaticInit44a327fd70931d80e4f5df1ab5d6999d
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
         'IntlDateFormatter' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/IntlDateFormatter.php',
@@ -362,6 +380,7 @@ class ComposerStaticInit44a327fd70931d80e4f5df1ab5d6999d
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit44a327fd70931d80e4f5df1ab5d6999d::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit44a327fd70931d80e4f5df1ab5d6999d::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit44a327fd70931d80e4f5df1ab5d6999d::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit44a327fd70931d80e4f5df1ab5d6999d::$classMap;
 
         }, null, ClassLoader::class);
