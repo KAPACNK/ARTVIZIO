@@ -5,4 +5,6 @@
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format'], ['variable', '/', '\\d+', 'code'], ['text', '/_error']], [], []],
     'book_list' => [[], ['_controller' => 'App\\Controller\\BookListController::index'], [], [['text', '/']], [], []],
+    'book_add' => [[], ['_controller' => 'App\\Controller\\BookListController::create'], [], [['text', '/create']], [], []],
+    'book_update' => [['id'], ['_controller' => 'App\\Controller\\BookListController::update'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/update']], [], []],
 ];
