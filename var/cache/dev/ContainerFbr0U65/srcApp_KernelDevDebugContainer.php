@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerP2A7XlS;
+namespace ContainerFbr0U65;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -767,6 +767,9 @@ class srcApp_KernelDevDebugContainer extends Container
         $instance->addListener('kernel.request', [0 => function () {
             return ($this->privates['debug.debug_handlers_listener'] ?? $this->getDebug_DebugHandlersListenerService());
         }, 1 => 'configure'], 2048);
+        $instance->addListener('console.command', [0 => function () {
+            return ($this->privates['debug.debug_handlers_listener'] ?? $this->getDebug_DebugHandlersListenerService());
+        }, 1 => 'configure'], 2048);
         $instance->addListener('kernel.request', [0 => function () {
             return ($this->privates['router_listener'] ?? $this->getRouterListenerService());
         }, 1 => 'onKernelRequest'], 32);
@@ -1115,18 +1118,6 @@ class srcApp_KernelDevDebugContainer extends Container
     }
 
     /**
-     * Gets the private '.errored..service_locator..j7DS4F.App\Entity\Book' shared service.
-     *
-     * @return \App\Entity\Book
-     */
-    protected function getBookService()
-    {
-        include_once \dirname(__DIR__, 4).'\\src\\Entity\\Book.php';
-
-        return $this->privates['.errored..service_locator..j7DS4F.App\\Entity\\Book'] = new \App\Entity\Book();
-    }
-
-    /**
      * Gets the private '.legacy_resolve_controller_name_subscriber' shared service.
      *
      * @return \Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerNameSubscriber
@@ -1134,36 +1125,6 @@ class srcApp_KernelDevDebugContainer extends Container
     protected function get_LegacyResolveControllerNameSubscriberService()
     {
         return $this->privates['.legacy_resolve_controller_name_subscriber'] = new \Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerNameSubscriber(($this->privates['.legacy_controller_name_converter'] ?? ($this->privates['.legacy_controller_name_converter'] = new \Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser(($this->services['kernel'] ?? $this->get('kernel', 1)), false))), false);
-    }
-
-    /**
-     * Gets the private '.service_locator..j7DS4F' shared service.
-     *
-     * @return \Symfony\Component\DependencyInjection\ServiceLocator
-     */
-    protected function get_ServiceLocator__J7DS4FService()
-    {
-        return $this->privates['.service_locator..j7DS4F'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
-            'book' => ['privates', '.errored..service_locator..j7DS4F.App\\Entity\\Book', NULL, 'Cannot autowire service ".service_locator..j7DS4F": it references class "App\\Entity\\Book" but no such service exists.'],
-        ], [
-            'book' => 'App\\Entity\\Book',
-        ]);
-    }
-
-    /**
-     * Gets the private '.service_locator.EEh4gf4' shared service.
-     *
-     * @return \Symfony\Component\DependencyInjection\ServiceLocator
-     */
-    protected function get_ServiceLocator_EEh4gf4Service()
-    {
-        return $this->privates['.service_locator.EEh4gf4'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
-            'App\\Controller\\BookListController::update' => ['privates', '.service_locator..j7DS4F', 'get_ServiceLocator__J7DS4FService', false],
-            'App\\Controller\\BookListController:update' => ['privates', '.service_locator..j7DS4F', 'get_ServiceLocator__J7DS4FService', false],
-        ], [
-            'App\\Controller\\BookListController::update' => '?',
-            'App\\Controller\\BookListController:update' => '?',
-        ]);
     }
 
     /**
@@ -1805,7 +1766,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\http-kernel\\Controller\\ArgumentResolver\\TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\http-kernel\\Controller\\ArgumentResolver\\NotTaggedControllerValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.EEh4gf4'] ?? $this->get_ServiceLocator_EEh4gf4Service())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.I3K77mT'] ?? ($this->privates['.service_locator.I3K77mT'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [], [])))), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -1847,7 +1808,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\http-kernel\\Controller\\ArgumentResolver\\TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\http-kernel\\Controller\\ArgumentResolver\\ServiceValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.EEh4gf4'] ?? $this->get_ServiceLocator_EEh4gf4Service())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.I3K77mT'] ?? ($this->privates['.service_locator.I3K77mT'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [], [])))), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**

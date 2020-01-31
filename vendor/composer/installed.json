@@ -4204,17 +4204,17 @@
     },
     {
         "name": "symfony/validator",
-        "version": "v4.4.3",
-        "version_normalized": "4.4.3.0",
+        "version": "v4.4.4",
+        "version_normalized": "4.4.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/validator.git",
-            "reference": "2f3ec17a371cc56b3a2855b5eae0702f70611e81"
+            "reference": "eb3e15de5c63873ca6e2a88b56a029f7be4c5953"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/validator/zipball/2f3ec17a371cc56b3a2855b5eae0702f70611e81",
-            "reference": "2f3ec17a371cc56b3a2855b5eae0702f70611e81",
+            "url": "https://api.github.com/repos/symfony/validator/zipball/eb3e15de5c63873ca6e2a88b56a029f7be4c5953",
+            "reference": "eb3e15de5c63873ca6e2a88b56a029f7be4c5953",
             "shasum": ""
         },
         "require": {
@@ -4263,7 +4263,7 @@
             "symfony/translation": "For translating validation errors.",
             "symfony/yaml": ""
         },
-        "time": "2020-01-21T08:20:44+00:00",
+        "time": "2020-01-31T09:11:17+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
